@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voor Yvonne</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffe6f0, #e6f7ff);
+            color: #333;
+        }
+    
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            line-height: 1.4;
+        }   
+    
+        button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 25px;
+        
+            background-color: #ff7aa2;
+            color: white;
+            cursor: pointer;
+        
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            transition: 0.2s ease;
+        }
+        
+        button:hover {
+            background-color: #ff4f86;
+            transform: scale(1.05);
+        }
+        
+        button:active {
+            transform: scale(0.95);
+        }
+        
+        #ComplimentenToner {
+            margin-top: 20px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ff4f86;
+            transition: transform 0.2s ease;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>
+        Hallo Yvonne, ik heb dit gemaakt voor jou... (Als dit cringe is, spijt het me echt)
+    </h1>
+
+    <button id="btn">
+        Klik hier...
+    </button>
+
+    <div id="ComplimentenToner"></div>
+
+    <script>
+        const complimenten = [
+            "Je bent mega aardig en lief",
+            "Je bent mega grappig",
+            "Mijn strip is veel beter als jij hem hebt gelezen (de Noorshow)",
+            "Je kan mega goed troosten",
+            "Als je ergens binnenkomt, gaat de sfeer van: 'Mjah' naar 'tof'"
+        ];
+
+        function geefCompliment() {
+            const index = Math.floor(Math.random() * complimenten.length);
+            return complimenten[index];
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("btn").addEventListener("click", function () {
+                document.getElementById("ComplimentenToner").innerHTML = geefCompliment();
+            });
+        });
+    </script>
+
+</body>
+</html>
